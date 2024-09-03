@@ -1,0 +1,53 @@
+<% sidebar={ home:"collapsed", addCustomer:"collapsed", leads:"collapsed", searchAgent : "collapsed"
+    ,addVisit:"collapsed",addAgent:"collapsed"}; for(var key in sidebar){ if(key==sidebarTitle){ sidebar[key]="" ; } } %>
+    <!-- ======= Sidebar ======= -->
+    <aside id=" sidebar" class="sidebar">
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link <%= sidebar['home'] %>" href="home">
+                    <i class="bi bi-grid"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <!-- End Dashboard Nav -->
+
+            <li class="nav-heading">Pages</li>
+            <li class="nav-item">
+                <a class="nav-link  <%= sidebar['searchAgent'] %>" href="searchAgent">
+                    <i class="bi bi-search"></i>
+                    <span>Search Agent
+
+                    </span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  <%= sidebar['addVisit'] %>" href="searchAgent">
+                    <i class="bi bi-briefcase"></i>
+                    <span>Add Visits</span>
+                </a>
+            </li><li class="nav-item">
+                <a class="nav-link  <%= sidebar['addAgent'] %>" href="addAgentPage">
+                    <i class="bi bi-briefcase"></i>
+                    <span>Add Agents</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  <%= sidebar['leads'] %>" href="leadsPage">
+                    <i class="bi bi-briefcase"></i>
+                    <span>Leads</span>
+                </a>
+            </li>
+            <!-- End Leads Page  -->
+
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/logout">
+                    <i class="bi bi-box-arrow-in-left"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+            <!-- End Logout Page Nav -->
+        </ul>
+    </aside>
+    <!-- End Sidebar-->

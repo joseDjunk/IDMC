@@ -1,0 +1,37 @@
+<% searchBar=false; sidebarTitle="home" %>
+    <%- include('./../templates/mm-head.ejs') %>
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <body>
+            <%- include('./../templates/mm-header.ejs') %> <%- include('./../templates/mm-sidebar.ejs') %>
+
+                    <main id="main" class="main">
+                        <div class="pagetitle">
+                            <h1>Business Development Manager Dashboard</h1>
+                        </div>
+                        <!-- End Page Title -->
+
+                        <section class="section dashboard">
+                            <div class="row">
+                                <!-- Left side columns -->
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <%- include('./../templates/mm-headCards.ejs') %>
+
+                                            <%- include('./../templates/mm-recentSalesTable.ejs') %>
+                                    </div>
+                                </div>
+                                <!-- End Left side columns -->
+                            </div>
+                        </section>
+                    </main>
+                    <!-- End #main -->
+
+                    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+                            class="bi bi-arrow-up-short"></i></a>
+                    <%- include('./../templates/mm-footer.ejs') %> <%-
+                            include('./../templates/mm-footerScript.ejs') %>
+        </body>
+
+        </html>

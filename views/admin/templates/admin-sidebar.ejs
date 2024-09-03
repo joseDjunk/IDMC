@@ -1,0 +1,79 @@
+<% sidebar={ home:"collapsed", addCustomer:"collapsed", leads:"collapsed", searchCustomer : "collapsed" , addDestination
+    : "collapsed" ,addRegion: "collapsed" ,addUser: "collapsed" ,adminHub:"collapsed" }; for(var key in sidebar){
+    if(key==sidebarTitle){ sidebar[key]="" ; } } %>
+    <!-- ======= Sidebar ======= -->
+    <aside id=" sidebar" class="sidebar">
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link <%= sidebar['home'] %>" href="home">
+                    <i class="bi bi-grid"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <!-- End Dashboard Nav -->
+
+            <li class="nav-heading">Pages</li>
+
+            <li class="nav-item">
+                <a class="nav-link  <%= sidebar['leads'] %>" href="leads">
+                    <i class="bi bi-briefcase"></i>
+                    <span>Leads</span>
+                </a>
+            </li>
+            <!-- End Leads Page  -->
+
+            <li class="nav-item">
+                <a class="nav-link  <%= sidebar['searchCustomer'] %>" href="searchAgent">
+                    <i class="bi bi-search"></i>
+                    <span>Search Agent </span>
+                </a>
+            </li>
+            <!-- End Customers Page Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link  <%= sidebar['addCustomer'] %>" href="addAgent">
+                    <i class="bi bi-person-plus"></i>
+                    <span>Create Agent</span>
+                </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link  <%= sidebar['addDestination'] %>" href="addDestination">
+                    <i class="bi bi-person-plus"></i>
+                    <span>Create Destination</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link  <%= sidebar['addRegion'] %>" href="addRegion">
+                    <i class="bi bi-person-plus"></i>
+                    <span>Create Region(Pending)</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link  <%= sidebar['addUser'] %>" href="addUser">
+                    <i class="bi bi-person-plus"></i>
+                    <span>Create User</span>
+                </a>
+            </li>
+            <!-- End Customers Page Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link  <%= sidebar['adminHub'] %>" href="adminHub">
+                    <i class="bi bi-person-plus"></i>
+                    <span>Admin Hub (Pending)</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/logout">
+                    <i class="bi bi-box-arrow-in-left"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+            <!-- End Logout Page Nav -->
+        </ul>
+    </aside>
+    <!-- End Sidebar-->

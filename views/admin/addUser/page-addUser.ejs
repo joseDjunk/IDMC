@@ -1,0 +1,228 @@
+<% searchBar=true; sidebarTitle="addUser" %>
+    <%- include('./../templates/admin-head.ejs') %>
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <body>
+            <%- include('./../templates/admin-header.ejs') %>
+                <%- include('./../templates/admin-sidebar.ejs') %>
+
+                    <main id="main" class="main">
+                        <div class="pagetitle">
+                            <!-- <h1>Marketing Manager Dashboard</h1> -->
+                        </div>
+                        <!-- End Page Title -->
+
+                        <section class="section dashboard">
+                            <div class="row">
+                                <!-- Left side columns -->
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Create New Destination</h5>
+
+                                                    <!-- Floating Labels Form -->
+                                                    <form class="row g-3" action="addUser" method="POST">
+                                                        <div class="col-md-6">
+                                                            <div class="form-floating">
+                                                                <input type="text" name="first_name"
+                                                                    class="form-control" placeholder=""
+                                                                    id="firstName" />
+                                                                <label for="firstName">First
+                                                                    Name</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-floating">
+                                                                <input type="text" name="last_name" class="form-control"
+                                                                    placeholder="" id="lastName" />
+                                                                <label for="lastName">Last
+                                                                    Name</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <div class="form-floating">
+                                                                <input type="text" name="emp_id" class="form-control"
+                                                                    placeholder="" id="empId" />
+                                                                <label for="empId">Employement Id</label>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <!-- TODO -->
+                                                        <!-- If designation is DMC Employee, create a dropdown listing the DMCs -->
+                                                        <div class="col-md-6">
+                                                            <div class="form-floating">
+                                                                <select id="designationId" name="designation_id"
+                                                                    class="form-control">
+                                                                    <option value="">Select Designation</option>
+                                                                    <% designations.forEach(function(designation,index)
+                                                                        { %>
+                                                                        <option value="<%= index %>">
+                                                                            <%= designation.designation %>
+                                                                        </option>
+                                                                        <% }) %>
+                                                                </select>
+                                                                <label for="designationId">Designation</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <div class="form-floating">
+                                                                <input type="text" name="phone" class="form-control"
+                                                                    placeholder="" id="phone" />
+                                                                <label for="phone">Phone Number</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <div class="form-floating">
+                                                                <input type="text" name="alt_phone" class="form-control"
+                                                                    placeholder="" id="altPhone" />
+                                                                <label for="altPhone">Alternate Phone Number</label>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="col-md-8">
+                                                            <div class="form-floating">
+                                                                <input type="email" name="personal_email_id"
+                                                                    class="form-control" placeholder=""
+                                                                    id="personalEmailId" />
+                                                                <label for="personalEmailId">Personal Email Id</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <div class="form-floating">
+                                                                <input type="email" name="official_email_id"
+                                                                    class="form-control" placeholder=""
+                                                                    id="officialEmailId" />
+                                                                <label for="officialEmailId">Official Email Id</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-8">
+                                                            <div class="form-floating">
+                                                                <textarea class="form-control" placeholder=""
+                                                                    name="address" id="address"
+                                                                    style="height: 100px;"></textarea>
+                                                                <label for="address">Address</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-floating">
+                                                                <input type="text" name="city" class="form-control"
+                                                                    placeholder="" id="city" />
+                                                                <label for="city">City</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-floating">
+                                                                <select id="state" name="state" class="form-control">
+                                                                    <option value="">Select State/UT
+                                                                    </option>
+                                                                    <% states.forEach(function(state){ %>
+                                                                        <option value='<%=state %>'>
+                                                                            <%= state %>
+                                                                        </option>
+                                                                        <% }) %>
+                                                                </select>
+                                                                <label for="state">State/UT</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-floating">
+                                                                <select id="regionId" name="region_id"
+                                                                    class="form-control">
+                                                                    <option value="">Select Region</option>
+                                                                    <% regions.forEach(region=> { %>
+                                                                        <option value="<%= region.id %>">
+                                                                            <%= region.region_name %>
+                                                                        </option>
+                                                                        <% }) %>
+                                                                </select>
+                                                                <label for="regionId">Region</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <div class="form-floating">
+                                                                <input type="text" name="pincode" class="form-control"
+                                                                    placeholder="" id="pincode" />
+                                                                <label for="pincode">Pincode</label>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="col-md-6">
+                                                            <div class="form-floating">
+                                                                <input type="text" name="username" class="form-control"
+                                                                    placeholder="" id="username" />
+                                                                <label for="username">Create a username</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-10">
+                                                            <div class="form-floating">
+                                                                <input type="password" name="password"
+                                                                    class="form-control" placeholder="" id="password" />
+                                                                <label for="password">Password</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-10">
+                                                            <div class="form-floating">
+                                                                <input type="password" name="re_password"
+                                                                    class="form-control" placeholder=""
+                                                                    id="rePassword" />
+                                                                <label for="rePassword">Repeat Password</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Checking whether DMC Employee -->
+                                                        <div class="col-md-10">
+                                                            <div class="form-floating">
+                                                                <select id="dmcId" name="dmc_id" class="form-control">
+                                                                    <option value="">Select DMC
+                                                                    </option>
+                                                                    <% dmc.forEach(function(dm,index){ %>
+                                                                        <option value="<%= index %>">
+                                                                            <%= dm.dmc_name %>
+                                                                        </option>
+                                                                        <% }) %>
+                                                                </select>
+                                                                <label for="dmcId">Choose DMC</label>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="text-center">
+                                                            <button type="submit" class="btn btn-primary">
+                                                                Submit
+                                                            </button>
+                                                            <button type="reset" class="btn btn-secondary">
+                                                                Reset
+                                                            </button>
+                                                        </div>
+
+                                                    </form>
+                                                    <!-- End floating Labels Form -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Left side columns -->
+                            </div>
+                        </section>
+                    </main>
+                    <!-- End #main -->
+
+                    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+                            class="bi bi-arrow-up-short"></i></a>
+                    <%- include('./../templates/admin-footer.ejs') %> <%-
+                            include('./../templates/admin-footerScript.ejs') %>
+        </body>
+
+        </html>

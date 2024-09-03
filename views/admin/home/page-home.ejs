@@ -1,0 +1,37 @@
+<% searchBar=false; sidebarTitle="home" %>
+    <%- include('./../templates/admin-head.ejs') %>
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <body>
+            <%- include('./../templates/admin-header.ejs') %> <%- include('./../templates/admin-sidebar.ejs') %>
+
+                    <main id="main" class="main">
+                        <div class="pagetitle">
+                            <h1>Admin Dashboard</h1>
+                        </div>
+                        <!-- End Page Title -->
+
+                        <section class="section dashboard">
+                            <div class="row">
+                                <!-- Left side columns -->
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <%- include('./templates/admin-headCards.ejs') %>
+                                            <%-include('./templates/admin-recentSalesTable.ejs') %>
+                                    </div>
+                                </div>
+                                <!-- End Left side columns -->
+                            </div>
+                        </section>
+                    </main>
+                    <!-- End #main -->
+
+                    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+                            class="bi bi-arrow-up-short"></i></a>
+                    <%- include('./../templates/admin-footer.ejs') %>
+        </body>
+        <%- include('./../templates/admin-footerScript.ejs') %>
+            <script type="text/javascript" src="/js/admin/admin-home.js"></script>
+
+        </html>

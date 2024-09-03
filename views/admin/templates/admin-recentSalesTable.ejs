@@ -1,0 +1,162 @@
+<!-- Recent Sales -->
+<div class="col-12">
+    <div class="card recent-sales overflow-auto">
+        <div class="filter"></div>
+
+        <div class="card-body">
+            <h5 class="card-title">Pending Sales</h5>
+
+            <table class="table table-borderless datatable">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Customer</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">DMC</th>
+                        <th scope="col">Remarks</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"><a href="#">#2457</a></th>
+                        <td>Brandon Jacob</td>
+                        <td>
+                            <a href="#" class="text-primary">Delhi(5D/4N)</a>
+                        </td>
+                        <td><select>
+                                <option>Travelust</option>
+                                <option>Honey Well</option>
+                                <option>Himalayan Travels</option>
+                            </select></td>
+                        <td>$64</td>
+                        <td>
+                            <span class="badge bg-success">Approved</span>
+                        </td>
+                        <td> <a href=""><button type="button" class="btn btn-outline-success btn-sm">Add
+                                    lead</button></a>
+                            <button type="button" onclick="showModal()" class="btn btn-outline-info btn-sm"
+                                data-bs-toggle="modal" data-bs-target="#verticalycentered">
+                                details</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a href="#">#2147</a></th>
+                        <td>Bridie Kessler</td>
+                        <td>
+                            <a href="#" class="text-primary">Kerala(7D/6N)</a>
+                        </td>
+                        <td><select>
+                                <option>Travelust</option>
+                                <option>Honey Well</option>
+                                <option>Himalayan Travels</option>
+                            </select></td>
+                        <td>$47</td>
+                        <td><span class="badge bg-warning">Pending</span></td>
+                        <td><a href=""><button type="button" class="btn btn-outline-success btn-sm">Add
+                                    lead</button></a>
+                            <a href=""><button type="button" class="btn btn-outline-info btn-sm">details</button>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a href="#">#2049</a></th>
+                        <td>Ashleigh Langosh</td>
+                        <td>
+                            <a href="#" class="text-primary">Sikkim(3D/2N)</a>
+                        </td>
+                        <td><select>
+                                <option>Travelust</option>
+                                <option>Honey Well</option>
+                                <option>Himalayan Travels</option>
+                            </select></td>
+                        <td>$147</td>
+                        <td>
+                            <span class="badge bg-success">Approved</span>
+                        <td><a href=""><button type="button" class="btn btn-outline-success btn-sm">Add
+                                    lead</button></a>
+                            <a href=""><button type="button" class="btn btn-outline-info btn-sm">details</button>
+                            </a>
+                        </td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a href="#">#2644</a></th>
+                        <td>Angus Grady</td>
+                        <td>
+                            <a href="#" class="text-primar">Gujrath(4D/3N)</a>
+                        </td>
+                        <td><select>
+                                <option>Travelust</option>
+                                <option>Honey Well</option>
+                                <option>Himalayan Travels</option>
+                            </select></td>
+                        <td>$67</td>
+                        <td><span class="badge bg-info">Rejected</span></td>
+                        <td> <a href=""><button type="button" class="btn btn-outline-success btn-sm">Add
+                                    lead</button></a>
+                            <a href=""><button type="button" class="btn btn-outline-info btn-sm">details</button>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a href="#">#2644</a></th>
+                        <td>Raheem Lehner</td>
+                        <td>
+                            <a href="#" class="text-primary">Goa(3D/2N)</a>
+                        </td>
+                        <td><select>
+                                <option>Travelust</option>
+                                <option>Honey Well</option>
+                                <option>Himalayan Travels</option>
+                            </select></td>
+                        <td>$165</td>
+                        <td>
+                            <span class="badge bg-success">Approved</span>
+                        <td> <a href=""><button type="button" class="btn btn-outline-success btn-sm">Add
+                                    lead</button></a>
+                            <a href=""><button type="button" class="btn btn-outline-info btn-sm">details</button>
+                            </a>
+                        </td>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="addCustomer">
+                <button type="button" class="btn btn-outline-success">
+                    Create New Customer
+                </button></a>
+        </div>
+    </div>
+
+    <div class="card-body">
+
+        <!-- Vertically centered Modal -->
+
+        <div class="modal fade" id="verticalycentered" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h5 class="modal-title"><span id="modal-header"></span></h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span id="modal-content"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger" onclick="deleteLead()">Delete Lead</button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Vertically centered Modal-->
+
+    </div>
+</div>
+
+
+</div>
+<!-- End Recent Sales -->

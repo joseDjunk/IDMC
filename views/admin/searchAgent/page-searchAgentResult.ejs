@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<% searchBar=true; sidebarTitle="searchCustomer" %>
+    <%- include('./../templates/admin-head.ejs') %>
+
+        <html lang="en">
+
+        <body>
+            <%- include('./../templates/admin-header.ejs') %>
+                <%- include('./../templates/admin-sidebar.ejs') %>
+
+                    <main id="main" class="main">
+                        <div class="pagetitle">
+                            <!-- <h1>Marketing Manager Dashboard</h1> -->
+                        </div>
+                        <!-- End Page Title -->
+                        <section class="section">
+                            <div class="row">
+                                <div class="col-lg-12">
+
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Search Results</h5>
+
+                                            <!-- Table with stripped rows -->
+                                            <table class="table datatable" id="agentsTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Agent ID</th>
+                                                        <th>Agent Name</th>
+                                                        <th>Region</th>
+                                                        <th>Address</th>
+                                                        <th>Contact Name</th>
+                                                        <th>Office Contact</th>
+                                                        <th>Alternate Contact</th>
+                                                        <th>Email</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <% data.forEach(agent=> { %>
+                                                        <tr>
+                                                            <td>
+                                                                <%= agent.id %>
+                                                            </td>
+                                                            <td>
+                                                                <%= agent.agent_name %>
+                                                            </td>
+                                                            <td>
+                                                                <%= agent.region_name %>
+                                                            </td>
+                                                            <td>
+                                                                <%= agent.address %><br>
+                                                                    <%= agent.city %><br>
+                                                                        <%= agent.district %><br>
+                                                                            <%= agent.state %><br>
+                                                                                <%= agent.pincode %>
+                                                            </td>
+                                                            <td>
+                                                                <%= agent.first_name %>
+                                                                    <%= agent.last_name %>
+                                                            </td>
+                                                            <td>
+                                                                <%= agent.office_contact %>
+                                                            </td>
+                                                            <td>
+                                                                <%= agent.alt_contact %>
+                                                            </td>
+                                                            <td>
+                                                                <%= agent.email_id %>
+                                                            </td>
+                                                            <td>
+                                                                <button class="btn btn-outline-success add-lead-btn"
+                                                                    data-agent-id="<%= agent.id %>"><i
+                                                                        class="bi bi-clipboard-plus"></i></button>
+                                                                <button class="btn btn-outline-warning"><i
+                                                                        class="bi bi-pen-fill"></i></button>
+                                                                <button class="btn btn-outline-danger"><i
+                                                                        class="bi bi-dash-circle-fill"></i></button>
+                                                            </td>
+
+                                                        </tr>
+                                                        <% }) %>
+                                                </tbody>
+                                            </table>
+                                            <!-- End Table with stripped rows -->
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                    <!-- End #main -->
+
+                    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+                            class="bi bi-arrow-up-short"></i></a>
+                    <%- include('./../templates/admin-footer.ejs') %> <%-
+                            include('./../templates/admin-footerScript.ejs') %>
+        </body>
+        <script type="text/javascript" src="/js/admin/searchAgent.js"></script>
+
+        </html>

@@ -1,0 +1,102 @@
+<% sidebar={ home:"collapsed", addCustomer:"collapsed", leads:"collapsed", searchCustomer : "collapsed" ,
+    dmc:"collapsed", mm:"collapsed" }; for(var key in sidebar){ if(key==sidebarTitle){ sidebar[key]="" ; } } var
+    dmc_name="Smiling Trips" ; //Need to set this name from db mm_name="Nikunj" ; //Need to set this name from db %>
+    <!-- ======= Sidebar ======= -->
+    <aside id=" sidebar" class="sidebar">
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link <%= sidebar['home'] %>" href="home">
+                    <i class="bi bi-grid"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <!-- End Dashboard Nav -->
+
+            <li class="nav-heading">Pages</li>
+            <li class="nav-item">
+                <a class="nav-link   <%= sidebar['dmc'] %>" data-bs-target="#dmc-nav" data-bs-toggle="collapse"
+                    href="#">
+                    <i class="bi bi-menu-button-wide"></i><span>DMC Analysis</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <!-- TO DO  -->
+                <!-- Call the DMC companies Dynamically -->
+                <ul id="dmc-nav" class="nav-content collapse <% if(!sidebar['dmc']){ %> show<%} %>"
+                    data-bs-parent="#sidebar-nav">
+                    <% DMCSideBarLabel.forEach(dmc=> {
+                        %>
+                        <li class="nav-item">
+                            <a href="/sd/dmc?dmc_id=<%= dmc.id %>" <% if(typeof DMCName !=='undefined' ){
+                                if(DMCName==dmc.dmc){%>
+                                class='active'
+                                <%}else{ %>
+                                    class=''
+                                    <% }} %>>
+                                        <i class="bi bi-circle active"></i><span>
+                                            <%= dmc.dmc %>
+                                        </span>
+                            </a>
+                        </li>
+                        <% }) %>
+
+                </ul>
+
+
+            <li class="nav-item">
+                <a class="nav-link   <%= sidebar['mm'] %>" data-bs-target="#mm-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-menu-button-wide"></i><span>Marketing Managers Analysis</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <!-- TO DO  -->
+                <!-- Call the DMC companies Dynamically -->
+                <ul id="mm-nav" class="nav-content collapse  <% if(!sidebar['mm']){ %> show<%} %>"
+                    data-bs-parent="#sidebar-nav">
+                    <% MMSideBarLabel.forEach(mm=> {
+                        %>
+                        <li class="nav-item">
+                            <a href="/sd/mm?mm_id=<%= mm.emp_id %>" <% if(typeof MMId !=='undefined' ){
+                                if(MMId==mm.emp_id){%>
+                                class='active'
+                                <%}else{ %>
+                                    class=''
+                                    <% }} %>>
+                                        <i class="bi bi-circle active"></i><span>
+                                            <%= mm.first_name %>
+                                                <%= mm.last_name %>
+                                        </span>
+                            </a>
+                        </li>
+                        <% }) %>
+
+
+                </ul>
+            </li>
+
+            <!-- <li class="nav-item">
+                <a class="nav-link  <%= sidebar['leads'] %>" href="leads">
+                    <i class="bi bi-briefcase"></i>
+                    <span>Leads</span>
+                </a>
+            </li> -->
+            <!-- End Leads Page  -->
+
+            <!-- <li class="nav-item">
+                <a class="nav-link  <%= sidebar['searchCustomer'] %>" href="searchCustomer">
+                    <i class="bi bi-search"></i>
+                    <span>Search Customers
+
+                    </span>
+                </a>
+            </li> -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/logout">
+                    <i class="bi bi-box-arrow-in-left"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+            <!-- End Logout Page Nav -->
+
+        </ul>
+    </aside>
+    <!-- End Sidebar-->

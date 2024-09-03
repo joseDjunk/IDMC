@@ -1,0 +1,74 @@
+<!-- Recent Sales -->
+<div class="col-12">
+    <div class="card recent-sales overflow-auto">
+        <div class="filter"></div>
+
+        <div class="card-body">
+            <h5 class="card-title">Employee Target</h5>
+
+            <table class="table table-borderless datatable">
+                <thead>
+                    <tr>
+                        <th scope="col">Emp Id</th>
+                        <th scope="col">Employee</th>
+                        <th scope="col">DMC</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% employeeTarget.forEach(target=> {%>
+                        <tr>
+                            <th scope="row">
+                                <%= target.emp_id %>
+                            </th>
+                            <td>
+                                <%= target.first_name %>
+                                    <%= target.last_name %>
+                            </td>
+                            <td>
+                                <input type="number" style="text-align: center;" value="<%= target.target_amount %>"
+                                    onfocus="disableOtherButtons('<%= target.emp_id %>')" onblur="enableAllButtons()"
+                                    id="targetAmount_<%= target.emp_id %>">
+                            </td>
+                            <td>
+                                <button class="btn btn-success" id="targetUpdateButton_<%= target.emp_id %>"
+                                    onclick="UpdateFn('<%= target.emp_id %>')" disabled>Update</button>
+                            </td>
+                        </tr>
+                        <% }) %>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card-body">
+
+        <!-- Vertically centered Modal -->
+
+        <div class="modal fade" id="verticalycentered" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h5 class="modal-title"><span id="modal-header"></span></h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span id="modal-content"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger" onclick="deleteLead()">Delete Lead</button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Vertically centered Modal-->
+
+    </div>
+</div>
+
+
+</div>
+<!-- End Recent Sales -->

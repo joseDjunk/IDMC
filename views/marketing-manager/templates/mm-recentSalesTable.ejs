@@ -1,0 +1,54 @@
+<!-- Recent Sales -->
+<div class="col-12">
+    <div class="card recent-sales overflow-auto">
+        <div class="filter"></div>
+
+        <div class="card-body">
+            <h5 class="card-title">Recent Agent Visits</h5>
+
+            <table class="table table-borderless datatable">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Agent</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Contact Person</th>
+                        <th scope="col">Remarks</th>
+                        <th scope="col">Visited Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach(visit=>{
+                        %>
+                        <tr>
+                            <td>
+                                <%= visit.id %>
+                            </td>
+                            <td>
+                                <%= visit.agent_name %>
+                            <td>
+                                <%= visit.city %>
+                            </td>
+                            <td>
+                                <%= visit.contact_first_name + " " + visit.contact_last_name %>
+                            </td>
+                            </td>
+                            <td>
+                                <%= visit.remarks %>
+                            </td>
+                            <td>
+                                <%= visit.visited_date%>
+                            </td>
+
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+            <a href="searchAgent">
+                <button type="button" class="btn btn-outline-success">
+                    Create New Entry
+                </button></a>
+        </div>
+    </div>
+</div>
+<!-- End Recent Sales -->

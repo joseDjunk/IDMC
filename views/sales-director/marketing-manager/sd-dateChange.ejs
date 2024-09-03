@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Change Dates</h5>
+
+                <!-- Floating Labels Form -->
+                <form class="row g-3" action="/sd/mm" method="get">
+                    <!-- <div class="col-md-6">
+                        <div class="form-floating">
+                            <select id="dateType" name="dateType" class="form-control" onchange="chooseDateType()">
+                                <option value="0">Choose Date type</option>
+                                <option value="1">Date Range</option>
+                                <option value="2">Compare a previous month with another month</option>
+                            </select>
+                            <label for="dateType">dateType</label>
+                        </div>
+                    </div> -->
+
+                    <div class="col-md-4">
+                        <div class="form-floating">
+
+                        </div>
+                    </div>
+
+                    <span id="dateSelect">
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <!-- <input type="date" name="startDate" class="form-control" placeholder=""
+                                    id="startDate" /> -->
+                                <input type="date" name="startDate" class="form-control" placeholder="" id="startDate"
+                                    value="<%= startDate?startDate:'' %>" />
+
+                                <label for="startDate">Start Date</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <input type="date" name="endDate" class="form-control" placeholder="" id="endDate"
+                                    value="<%= endDate?endDate:'' %>" />
+                                <label for="endDate">End Date</label>
+                            </div>
+                        </div>
+                    </span>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="hidden" name="mm_id" value="<%= mm_id %>">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <button type="submit" class="form-floating btn btn-primary">Reload</button>
+                        </div>
+                    </div>
+
+                </form>
+                <!-- End floating Labels Form -->
+            </div>
+        </div>
+    </div>
+</div>

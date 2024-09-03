@@ -1,0 +1,86 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">
+            <%= chartTitleBarApex %>
+        </h5>
+
+        <!-- Bar Chart -->
+        <div id="barApex" style="max-height: 400px"></div>
+        <script>
+            var data = <%- salesPerDMC %>
+            var categories = <%- DMCLabels %>
+            
+            document.addEventListener("DOMContentLoaded", () => {
+                new ApexCharts(document.querySelector("#barApex"), {
+
+                    series: [{
+                        name: 'Sales',
+                        data: data
+                    }],
+                    annotations: {
+                        points: [{
+                            x: 'DMC',
+                            seriesIndex: 0,
+                            label: {
+                                borderColor: '#775DD0',
+                                offsetY: 0,
+                                style: {
+                                    color: '#fff',
+                                    background: '#775DD0',
+                                },
+                                text: 'DMC',
+                            }
+                        }]
+                    },
+                    chart: {
+                        height: 350,
+                        type: 'bar',
+                    },
+                    plotOptions: {
+                        bar: {
+                            borderRadius: 10,
+                            columnWidth: '50%',
+                        }
+                    },
+                    dataLabels: {
+                        enabled: true
+                    },
+                    stroke: {
+                        width: 0
+                    },
+                    grid: {
+                        row: {
+                            colors: ['#fff', '#f2f2f2']
+                        }
+                    },
+                    xaxis: {
+                        labels: {
+                            rotate: -45
+                        },
+                        categories: categories,
+                        tickPlacement: 'on'
+                    },
+                    yaxis: {
+                        title: {
+                            text: 'No. of Sales',
+                        },
+                    },
+                    fill: {
+                        type: 'gradient',
+                        gradient: {
+                            shade: 'light',
+                            type: "horizontal",
+                            shadeIntensity: 0.25,
+                            gradientToColors: undefined,
+                            inverseColors: true,
+                            opacityFrom: 0.85,
+                            opacityTo: 0.85,
+                            stops: [50, 0, 100]
+                        },
+                    }
+                }).render();
+            });
+        </script>
+        <!-- End Bar CHart -->
+    </div>
+</div>

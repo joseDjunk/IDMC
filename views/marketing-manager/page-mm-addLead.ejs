@@ -1,0 +1,143 @@
+<% searchBar=true; sidebarTitle="leads" %>
+    <%- include('./templates/template-mm-head.ejs') %>
+        <!DOCTYPE html>
+        <html lang="en">
+        <link rel="stylesheet" href="/css/marketing-manager/mm-marketing-manager.css">
+
+        <body>
+            <%- include('./templates/template-mm-header.ejs') %>
+                <%- include('./templates/template-mm-sidebar.ejs') %>
+
+                    <main id="main" class="main">
+                        <div class="pagetitle">
+                            <!-- <h1>Marketing Manager Dashboard</h1> -->
+                        </div>
+                        <!-- End Page Title -->
+
+                        <section class="section dashboard">
+                            <div class="row">
+                                <!-- Left side columns -->
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-body">
+
+                                                    <!-- Floating Labels Form -->
+                                                    <div id="verifyCustomer">
+                                                        <form class="row g-3" action="addCustomer" method="POST">
+                                                            <h5 class="card-title">Please select the agent</h5>
+                                                            <div class="col-md-12">
+                                                                <div class="form-floating">
+                                                                    <input type="text" name="firstName"
+                                                                        class="form-control" placeholder="Address"
+                                                                        id="firstName" />
+                                                                    <label for="firstName">Customer Name</label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-6">
+                                                                <div class="form-floating">
+                                                                    <input type="email" name="email"
+                                                                        class="form-control" placeholder="Address"
+                                                                        id="email" />
+                                                                    <label for="email">Client Email</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-floating">
+                                                                    <input type="text" name="contactNumber"
+                                                                        placeholder="Address" class="form-control"
+                                                                        id="contactNumber" />
+                                                                    <label for="contactNumber">Contact Number</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="form-floating">
+                                                                    <textarea name="address" class="form-control"
+                                                                        placeholder="Address" id="address"
+                                                                        style="height: 100px"></textarea>
+                                                                    <label for="address">Client Address</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-floating mb-3">
+                                                                    <select class="form-select" name="state" id="state"
+                                                                        aria-label="State">
+                                                                        <option selected>Select State</option>
+                                                                        <option value="Kerala">Kerala</option>
+                                                                        <option value="DC">DC</option>
+                                                                    </select>
+                                                                    <label for="state">State</label>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+
+
+                                                    <button type="button" id="verify-button" class="btn btn-primary" onclick="showModal()">
+                                                        Verify data
+                                                    </button>
+                                                   
+
+                                                    <div id="searchParams">
+                                                        <form class="row g-3" action="addLead" method="POST">
+
+                                                            <h5 class="card-title">Create New Lead</h5>
+
+                                                            <div class="col-md-12">
+                                                                <div class="form-floating">
+                                                                    <input type="text" name="destination"
+                                                                        placeholder="Address" class="form-control"
+                                                                        id="destination" />
+                                                                    <label for="destination">Destination</label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-6">
+                                                                <div class="form-floating">
+                                                                    <input type="text" name="days" class="form-control"
+                                                                        placeholder="Address" id="days" />
+                                                                    <label for="days">No. of Days</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-floating">
+                                                                    <input type="text" name="night" class="form-control"
+                                                                        placeholder="Address" id="night" />
+                                                                    <label for="night">Number of nights</label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="text-center">
+                                                                <button type="submit" class="btn btn-primary">
+                                                                    Submit
+                                                                </button>
+                                                                <button type="reset" class="btn btn-secondary">
+                                                                    Reset
+                                                                </button>
+                                                            </div>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Left side columns -->
+                            </div>
+                        </section>
+                    </main>
+                    <!-- End #main -->
+
+                    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+                            class="bi bi-arrow-up-short"></i></a>
+                    <%- include('./templates/template-mm-footer.ejs') %>
+                        <%- include('./templates/template-mm-footerScript.ejs') %>
+
+        </body>
+        <script type="text/javascript" src="/js/marketing-manager/mm-addLead.js"></script>
+
+        </html>

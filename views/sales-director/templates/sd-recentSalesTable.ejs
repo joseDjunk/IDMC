@@ -1,0 +1,80 @@
+<div class="col-lg-12">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-12">
+                        <div class="card recent-sales overflow-auto">
+
+                            <div class="filter">
+                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                    <li class="dropdown-header text-start">
+                                        <h6>Filter</h6>
+                                    </li>
+
+                                    <li><a class="dropdown-item" href="#">Today</a></li>
+                                    <li><a class="dropdown-item" href="#">This Month</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">This Year</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="card-body">
+                                <h5 class="card-title">Recent Leads
+                                </h5>
+
+                                <table class="table table-borderless datatable">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Agent</th>
+                                            <th scope="col">Destination</th>
+                                            <% if(tableTitle=='MM' ){ %>
+                                                <th scope="col">Sales Person</th>
+                                                <% }else{ %>
+                                                    <th scope="col">DMC</th>
+                                                    <% } %>
+
+                                                        <th scope="col">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% pendingLeads.forEach(lead=> { %>
+                                            <tr>
+                                                <th scope="row"><a href="#">#<%= lead.id %></a></th>
+                                                <td>
+                                                    <%= lead.agent_name %>
+                                                </td>
+                                                <td><a href="#" class="text-primary">
+                                                        <%= lead.destination_name %>(<%= lead.no_of_days %>D/<%=
+                                                                    lead.no_of_nights %>
+                                                                    N)
+                                                    </a></td>
+                                                <td>
+                                                    <% if(tableTitle=='MM' ){ %>
+                                                        <%= lead.first_name %>&nbsp<%= lead.last_name %>
+                                                                <% }else{ %>
+                                                                    <%= lead.dmc_name %>
+                                                                        <% } %>
+
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-warning">
+                                                        <%= lead.lead_status %>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <% }) %>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

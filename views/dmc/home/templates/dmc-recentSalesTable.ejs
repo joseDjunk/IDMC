@@ -1,0 +1,70 @@
+<!-- Recent Sales -->
+<div class="col-12">
+    <div class="card recent-sales overflow-auto">
+        <div class="filter"></div>
+
+        <div class="card-body">
+            <h5 class="card-title">Pending Sales</h5>
+
+            <table class="table table-borderless datatable" id="leadsTable">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Customer</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% results.forEach(lead=>{
+                        %>
+                        <tr>
+                            <td>
+                                <%= lead.lead_id%>
+                            </td>
+                            <td>
+                                <%= lead.agent_name%>
+                            </td>
+                            <td>
+                                <%= lead.destination_name %>(<%= lead.no_of_days%>D / <%= lead.no_of_nights %>N)
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" id="amount-<%= lead.lead_id %>"
+                                    value="<%= lead.amount %>" style="width: 100%; text-align: center;">
+                            </td>
+                            <td>
+                                <select class="form-control" id="status-<%= lead.lead_id %>">
+                                    <% leadStatuses.forEach(leadStatus=>{
+                                        if(leadStatus.lead_status == lead.lead_status){ %>
+
+                                        <option value="<%=leadStatus.id%>" selected>
+                                            <%=leadStatus.lead_status%>
+                                        </option>
+                                        <% }else{ %>
+                                            <option value="<%=leadStatus.id%>">
+                                                <%=leadStatus.lead_status%>
+                                            </option>
+                                            <% }}) %>
+                                </select>
+
+                            </td>
+                            <td><button class="btn btn-outline-success add-lead-btn"
+                                    onclick="submitRow('<%= lead.lead_id %>')"><i
+                                        class="bi bi-clipboard-plus"></i>Update</button>
+                            </td>
+                        </tr>
+                        <% })%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <%- include('./dmc-modal.ejs') %>
+
+
+</div>
+
+
+</div>
+<!-- End Recent Sales -->

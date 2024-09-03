@@ -1,0 +1,60 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">
+            <%= chartTitle %>
+        </h5>
+
+        <!-- Bar Chart -->
+        <div id="funnel" style="max-height: 400px"></div>
+        <script>
+            // Inputs categories and Data
+
+            const leadCountbyStatusArray = <%- (leadCountbyStatusArray) %>;
+            const leadStatusArray = <%- (leadStatusArray) %>;
+            console.log("Lead COunt" + JSON.stringify(leadCountbyStatusArray));
+            console.log("Lead Stats : " + JSON.stringify(leadStatusArray));
+            document.addEventListener("DOMContentLoaded", () => {
+                new ApexCharts(document.querySelector("#funnel"), {
+                    series: [
+                        {
+                            name: "",
+                            data: leadCountbyStatusArray,
+                        },
+                    ],
+                    chart: {
+                        type: 'bar',
+                        height: 350,
+                    },
+                    plotOptions: {
+                        bar: {
+                            borderRadius: 0,
+                            horizontal: true,
+                            barHeight: '80%',
+                            isFunnel: true,
+                        },
+                    },
+                    dataLabels: {
+                        enabled: true,
+                        formatter: function (val, opt) {
+                            return opt.w.globals.labels[opt.dataPointIndex] + ':  ' + val
+                        },
+                        dropShadow: {
+                            enabled: true,
+                        },
+                    },
+                    title: {
+                        text: '',
+                        align: 'middle',
+                    },
+                    xaxis: {categories:
+                        leadStatusArray,
+                    },
+                    legend: {
+                        show: false,
+                    },
+                }).render();
+            });
+        </script>
+        <!-- End Bar CHart -->
+    </div>
+</div>

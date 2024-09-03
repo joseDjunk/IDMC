@@ -1,0 +1,131 @@
+<% searchBar=true; sidebarTitle="searchCustomer" %>
+    <%- include('./templates/template-mm-head.ejs') %>
+        <!DOCTYPE html>
+        <html lang="en">
+        <link rel="stylesheet" href="/css/marketing-manager/mm-marketing-manager.css">
+
+        <body>
+            <%- include('./templates/template-mm-header.ejs') %>
+                <%- include('./templates/template-mm-sidebar.ejs') %>
+
+                    <main id="main" class="main">
+                        <div class="pagetitle">
+                            <!-- <h1>Marketing Manager Dashboard</h1> -->
+                        </div>
+                        <!-- End Page Title -->
+
+                        <section class="section dashboard">
+                            <div class="row">
+                                <!-- Left side columns -->
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card recent-sales overflow-auto">
+                                                <div class="filter"></div>
+
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Found Agents</h5>
+
+                                                    <table class="table table-borderless datatable">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">Agent Name</th>
+                                                                <th scope="col">Region</th>
+                                                                <th scope="col">DMC</th>
+                                                                <th scope="col">Remarks</th>
+                                                                <th scope="col">Status</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row"><a href="#">#2457</a></th>
+                                                                <td>Brandon Jacob</td>
+                                                                <td>
+                                                                    <a href="#" class="text-primary">At praesentium
+                                                                        minu</a>
+                                                                </td>
+
+                                                                <td> <a href="addLead"><button type="button"
+                                                                            class="btn btn-outline-success btn-sm">Add
+                                                                            lead</button></a>
+                                                                </td>
+                                                                <td>$64</td>
+                                                                <td>
+                                                                    <span class="badge bg-success">Approved</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a href="#">#2147</a></th>
+                                                                <td>Bridie Kessler</td>
+                                                                <td>
+                                                                    <a href="#" class="text-primary">Blanditiis dolor
+                                                                        omnis similique</a>
+                                                                </td>
+                                                                <td>$47</td>
+                                                                <td>$47</td>
+                                                                <td><span class="badge bg-warning">Pending</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a href="#">#2049</a></th>
+                                                                <td>Ashleigh Langosh</td>
+                                                                <td>
+                                                                    <a href="#" class="text-primary">At recusandae
+                                                                        consectetur</a>
+                                                                </td>
+                                                                <td>$147</td>
+                                                                <td>$147</td>
+                                                                <td>
+                                                                    <span class="badge bg-success">Approved</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a href="#">#2644</a></th>
+                                                                <td>Angus Grady</td>
+                                                                <td>
+                                                                    <a href="#" class="text-primar">Ut voluptatem id
+                                                                        earum et</a>
+                                                                </td>
+                                                                <td>$67</td>
+                                                                <td>$67</td>
+                                                                <td><span class="badge bg-danger">Rejected</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a href="#">#2644</a></th>
+                                                                <td>Raheem Lehner</td>
+                                                                <td>
+                                                                    <a href="#" class="text-primary">Sunt similique
+                                                                        distinctio</a>
+                                                                </td>
+                                                                <td>$165</td>
+                                                                <td>$165</td>
+                                                                <td>
+                                                                    <span class="badge bg-success">Approved</span>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <a href="addCustomer">
+                                                        <button type="button" class="btn btn-outline-success">
+                                                            Create New Customer
+                                                        </button></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Left side columns -->
+                            </div>
+                        </section>
+                    </main>
+                    <!-- End #main -->
+
+                    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+                            class="bi bi-arrow-up-short"></i></a>
+                    <%- include('./templates/template-mm-footer.ejs') %>
+                        <%- include('./templates/template-mm-footerScript.ejs') %>
+
+        </body>
+        <script type="text/javascript" src="/js/marketing-manager/mm-addLead.js"></script>
+
+        </html>

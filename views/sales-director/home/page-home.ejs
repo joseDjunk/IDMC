@@ -1,0 +1,82 @@
+<% searchBar=false; sidebarTitle="home" %>
+    <% chartDMC=["Smilings Trips", "Himalayan Travels" , "Global Wings" , "Travelust Tours" , "Avni MICE" , "Book & Fly"
+        , "IDMC Ops" ] %>
+        <% chartMM=['Amin', 'Maneesh' , 'Anup' , 'Nikunj' ,"Sampath",'No Staff'] %>
+            <% chartSeries=["Hello","Hi","Now","Then"]%>
+
+                <!DOCTYPE html>
+                <html lang="en">
+                <%- include('./../templates/sd-head.ejs') %>
+
+                    <body>
+                        <%- include('./../templates/sd-header.ejs') %> <%- include('./../templates/sd-sidebar.ejs') %>
+
+                                <main id="main" class="main">
+                                    <div class="pagetitle">
+                                        <h1>Sales Director Dashboard</h1>
+                                    </div>
+                                    <!-- End Page Title -->
+
+                                    <section class="section dashboard">
+                                        <div class="row">
+                                            <!-- Left side columns -->
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <%- include('./../templates/sd-dateChange.ejs') %>
+                                                </div>
+                                            </div>
+                                            <!-- End Left side columns -->
+                                        </div>
+                                        <div class="row">
+                                            <!-- Left side columns -->
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <%- include('./../templates/sd-headCards.ejs') %>
+                                                </div>
+                                            </div>
+                                            <!-- End Left side columns -->
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+
+                                                <%- include('./../templates/sd-graph.ejs') %>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <%- include('./../templates/sd-barApex.ejs') %>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <% chartTitle="Revenue Share per DMC " %>
+                                                    <%- include('./../templates/sd-pie.ejs') %>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <% chartTitle="Target achieved per Marketing Manager " %>
+                                                    <%- include('./../templates/sd-circleChart.ejs') %>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <% chartTitle="Sales converted per DMC " %>
+                                                    <%- %>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <%- include('./../templates/sd-recentSalesTable.ejs') %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </main>
+                                <!-- End #main -->
+
+                                <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+                                        class="bi bi-arrow-up-short"></i></a>
+                                <%- include('./../templates/sd-footer.ejs') %>
+                    </body>
+                    <%- include('./../templates/sd-footerScript.ejs') %>
+            <script type="text/javascript" src="/js/sd/sd-home.js"></script>
+
+
+                </html>

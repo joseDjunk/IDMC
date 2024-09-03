@@ -1,0 +1,101 @@
+<% searchBar=true; sidebarTitle="addVisit" %>
+    <%- include('./../templates/mm-head.ejs') %>
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <body>
+            <%- include('./../templates/mm-header.ejs') %>
+                <%- include('./../templates/mm-sidebar.ejs') %>
+
+                    <main id="main" class="main">
+                        <div class="pagetitle">
+                            <!-- <h1>Marketing Manager Dashboard</h1> -->
+                        </div>
+                        <!-- End Page Title -->
+
+                        <section class="section dashboard">
+                            <div class="row">
+                                <!-- Left side columns -->
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Create New Visit Details</h5>
+
+                                                    <!-- Floating Labels Form -->
+                                                    <form class="row g-3" action="addVisit" method="POST">
+                                                        <div class="col-md-8">
+                                                            <div class="form-floating">
+                                                                <input type="text" name="agentName" class="form-control"
+                                                                    placeholder="" id="agentName"
+                                                                    value="<%= data.agent.agent_name %>" readonly required />
+                                                                <label for="agentName">Agent Name</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-floating">
+                                                                <input type="text" name="agent_id" class="form-control"
+                                                                    placeholder="" id="agentId"
+                                                                    value="<%= data.agent.id %>" readonly required/>
+                                                                <label for="agentId">Agent Id</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="form-floating">
+                                                                <textarea name="remarks" class="form-control"
+                                                                    placeholder="" placeholder="Remarks" id="remarks"
+                                                                    name="remarks" style="height: 100px" required></textarea>
+                                                                <label for="address">Remarks</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-floating">
+                                                                <input type="date" name="date" class="form-control"
+                                                                    placeholder="" id="date" required />
+                                                                <label for="date">Visit Date</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-floating mb-3">
+                                                                <select class="form-control" id="contact_person"
+                                                                    name="contact_person" required>
+                                                                    <% data.contacts.forEach(contact=> { %>
+                                                                        <option value="<%= contact.id %>">
+                                                                            <%= contact.first_name %>
+                                                                                <%= contact.last_name %>
+                                                                        </option>
+                                                                        <% }) %>
+                                                                </select>
+                                                                <label for="contact_person">Contact Person</label>
+
+                                                            </div>
+
+                                                            <div class="text-center">
+                                                                <button type="submit" class="btn btn-primary">
+                                                                    Submit
+                                                                </button>
+                                                                <button type="reset" class="btn btn-secondary">
+                                                                    Reset
+                                                                </button>
+                                                            </div>
+
+                                                    </form>
+                                                    <!-- End floating Labels Form -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Left side columns -->
+                            </div>
+                        </section>
+                    </main>
+                    <!-- End #main -->
+
+                    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+                            class="bi bi-arrow-up-short"></i></a>
+                    <%- include('./../templates/mm-footer.ejs') %> <%- include('./../templates/mm-footerScript.ejs') %>
+        </body>
+
+        </html>

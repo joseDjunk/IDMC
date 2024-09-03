@@ -1,0 +1,86 @@
+<!-- Recent Sales -->
+<div class="col-12">
+    <div class="card recent-sales overflow-auto">
+        <div class="filter"></div>
+
+        <div class="card-body">
+            <h5 class="card-title">Unassigned Leads</h5>
+
+            <table class="table table-borderless datatable">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Customer</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">DMC</th>
+                        <th scope="col">Marketing Manager</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% leads.forEach(lead=> { if(lead.dmc_id ==0){%>
+                        <tr>
+                            <th scope="row"><a href="#">#<%= lead.id %></a></th>
+                            <td>
+                                <%= lead.agent_name %>
+                            </td>
+                            <td><a href="#" class="text-primary">
+                                    <%= lead.destination_name %>(<%= lead.no_of_days %>D/<%= lead.no_of_nights %>N)
+                                </a></td>
+                            <td>
+                                <select class="dmc-select" data-lead-id="<%= lead.id %>">
+                                    <% dmcs.forEach(dmc=> { %>
+                                        <option value="<%= dmc.id %>" <%=dmc.id==lead.dmc_id ? 'selected' : '' %>><%=
+                                                dmc.dmc_name %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                            </td>
+                            <td>
+                                <%= lead.first_name %>
+                                    <%= lead.last_name %>
+                            </td>
+                            <td>
+                                <a href="#"><button type="button" class="btn btn-outline-success btn-sm add-lead-btn"
+                                        data-lead-id="<%= lead.id %>">Change DMC</button></a>
+                                <button type="button" onclick="showModal()" class="btn btn-outline-info btn-sm"
+                                    data-bs-toggle="modal" data-bs-target="#verticalycentered">details</button>
+                            </td>
+                        </tr>
+                        <% }}) %>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card-body">
+
+        <!-- Vertically centered Modal -->
+
+        <div class="modal fade" id="verticalycentered" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h5 class="modal-title"><span id="modal-header"></span></h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span id="modal-content"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger" onclick="deleteLead()">Delete Lead</button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Vertically centered Modal-->
+
+    </div>
+</div>
+
+
+</div>
+<!-- End Recent Sales -->
